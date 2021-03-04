@@ -9,7 +9,7 @@
         <p class="card-text">[BOUCLE AVEC LISTE DES RESERVATIONS]</p>
       </div>
       <div class="card-footer text-muted">
-        <router-link  class="nav-link" to="/home">
+        <router-link  class="nav-link" to="/rp">
           <button type="button" class="btn btn-outline-info">Créer une réservation</button>
         </router-link>
       </div>
