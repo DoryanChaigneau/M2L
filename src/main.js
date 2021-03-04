@@ -5,7 +5,7 @@ import router from './router'
 import store from './store'
 import Axios from 'axios'
 
-Axios.defaults.baseURL = "http://127.0.0.1:8081/api/"
+Axios.defaults.baseURL = "http://127.0.0.1:8000/api/"
 
 Vue.config.productionTip = false
 
