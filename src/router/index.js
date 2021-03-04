@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Connection from '../views/Connection.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '',
+    path: '/',
     name: 'Connection',
-    component: () => import(/* webpackChunkName: "Connection" */ '../views/Connection.vue')
-  }
+    component: Connection
+  },
 ]
 
 const router = new VueRouter({
