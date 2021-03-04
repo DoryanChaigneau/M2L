@@ -1,14 +1,19 @@
 <template>
-  <ReservationSelect></ReservationSelect>
+	<div>
+		<Nav></Nav>
+		<ReservationSelect></ReservationSelect>
+	</div>
 </template>
 
 <script>
-import ReservationSelect from '@/components/ReservationSelect.vue'
+import ReservationSelect from '@/components/ReservationSelect.vue';
+import Nav from '@/components/Nav.vue'
 
 export default {
   name: 'ReservationSelectView',
   components:{
-    ReservationSelect
+    ReservationSelect,
+    Nav
   },
 }
 </script>
