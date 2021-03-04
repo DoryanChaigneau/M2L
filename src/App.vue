@@ -8,7 +8,7 @@
             <router-link class="nav-link" to="/">M2L</router-link>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/">Accueil</a>
+            <router-link  class="nav-link" to="/home">Accueil</router-link>
           </li>
         </ul>
       </div>
