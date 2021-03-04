@@ -13,9 +13,6 @@
           <li class="nav-item active">
             <router-link class="nav-link" to="/rp">Resaparam</router-link>
           </li>
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/rs">Resaselect</router-link>
-          </li>
         </ul>
       </div>
     </nav>
