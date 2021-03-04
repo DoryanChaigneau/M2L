@@ -14,6 +14,7 @@
             <router-link class="nav-link" to="/rp">Resaparam</router-link>
           </li>
         </ul>
+        <img alt="Vue logo" src="assets/logo.png">
       </div>
     </nav>
     <router-view/>
