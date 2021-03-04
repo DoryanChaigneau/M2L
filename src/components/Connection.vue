@@ -41,3 +41,25 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.formConnection {
+  display: table;
+}
+
+.login {
+  display: table-row;
+}
+
+label, input  {
+  display: table-cell;
+  margin-bottom: 10px;
+  margin-top: 1em;
+}
+
+label {
+  padding-right: 10px;
+}
+
+</style>
