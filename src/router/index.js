@@ -6,8 +6,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/connecion',
-    name: 'Connexion',
-    component: () => import('../views/Connection.vue')
+    name: 'Connection',
+    component: () => import(/* webpackChunkName: "Connection" */ '../views/Connection.vue')
   }
 ]
 
