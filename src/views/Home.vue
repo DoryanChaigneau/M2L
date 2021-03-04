@@ -8,6 +8,7 @@
         <h5 class="card-title">Liste de vos réservations</h5>
         <p class="card-text">[BOUCLE AVEC LISTE DES RESERVATIONS]</p>
       </div>
+      <img alt="Vue logo" src="../assets/logo.png">
       <div class="card-footer text-muted">
         <router-link  class="nav-link" to="/rp">
           <button type="button" class="btn btn-outline-info">Créer une réservation</button>
@@ -15,7 +16,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
