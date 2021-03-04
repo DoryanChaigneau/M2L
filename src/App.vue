@@ -17,8 +17,9 @@
 
       </div>
     </nav>
-     <img alt="Vue-logo" src="assets/logo.png">
+
     <router-view/>
+    <img alt="Vue-logo" src="assets/logo.png">
   </div>
 </template>
 
