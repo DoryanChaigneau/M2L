@@ -6,7 +6,7 @@
 import Connection from '@/components/Connection.vue'
 
 export default {
-  name: 'Connectionview',
+  name: 'ConnectionView',
   components:{
     Connection
   },
