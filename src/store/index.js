@@ -16,7 +16,6 @@ export default new Vuex.Store({
         "login": form.login,
         "motDePasse": form.motDePasse
       }).then(response => {
-        console.log((response))
         state.token = response.data.token;
       }).catch(
           error => {

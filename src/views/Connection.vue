@@ -1,9 +1,9 @@
 <template>
   <Connection></Connection>
 </template>
-<script>
-  import Connection from '@/components/Connection.vue' 
 
+<script>
+import Connection from '@/components/Connection.vue'
 
 export default {
   name: 'Connectionview',
@@ -12,6 +12,7 @@ export default {
   },
 }
 </script>
+
 <style scoped>
 
 .formConnection {
