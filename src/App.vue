@@ -1,25 +1,6 @@
 <template>
-
-  <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">M2L</router-link>
-          </li>
-          <li class="nav-item active">
-            <router-link  class="nav-link" to="/home">Accueil</router-link>
-          </li>
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/rp">Resaparam</router-link>
-          </li>
-        </ul>
-
-      </div>
-    </nav>
-
+  <div>
     <router-view/>
-    <img alt="Vue-logo" src="assets/logo.png">
   </div>
 </template>
 
