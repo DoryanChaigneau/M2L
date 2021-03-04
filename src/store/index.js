@@ -14,7 +14,7 @@ export default new Vuex.Store({
     login({ state}, form) {
       axios.post('auth', {
         "login": form.login,
-        "motDePasse": form.password
+        "motDePasse": form.motDePasse
       }).then(response => {
         console.log((response))
         state.token = response.data.token;
