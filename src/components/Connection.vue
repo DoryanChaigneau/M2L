@@ -8,7 +8,9 @@
       <v-text-field label="Mot de passe*" :rules="rules" hide-details="auto" />
     </v-card-text>
     <v-card-actions class="actions">
-      <v-btn id="coButtom" color="primary">
+      <v-btn id="coButtom" color="red"
+        @click="$router.push('/home')"
+      >
         se connecter
       </v-btn>
     </v-card-actions>
@@ -40,13 +42,13 @@ export default {
 <style scoped>
 
 #coButtom{
-  margin-bottom: 1em;
+  margin-bottom: 1em
 }
 .card {
   margin-left: auto;
   margin-right: auto;
   width:50%;
-  margin-top: 50px;
+  margin-top:8em;
   /* height: 50vh; */
   align-self: stretch;
 }
