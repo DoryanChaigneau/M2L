@@ -1,17 +1,14 @@
 <template>
   <div>
-    <Nav></Nav>
     <Connection></Connection>
   </div>
 </template>
 
 <script>
 import Connection from '@/components/Connection.vue';
-import Nav from '@/components/Nav.vue'
 export default {
   name: 'ConnectionView',
   components:{
-    Nav,
     Connection
   }
 }
