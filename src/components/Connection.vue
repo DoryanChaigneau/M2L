@@ -4,11 +4,11 @@
       Connexion
     </v-card-title>
     <v-card-text>
-      <v-text-field label="Adresse mail*" :rules="rules" hide-details="auto" />
-      <v-text-field label="Mot de passe*" :rules="rules" hide-details="auto" />
+      <v-text-field label="Identifiant *" :rules="rules" hide-details="auto" v-model="form.login"/>
+      <v-text-field label="Mot de passe *" :rules="rules" hide-details="auto" v-model="form.motDePasse"/>
     </v-card-text>
     <v-card-actions class="actions">
-      <v-btn id="coButtom" color="primary">
+      <v-btn id="coButtom" color="primary" @click.prevent="auth(form)">
         se connecter
       </v-btn>
     </v-card-actions>
@@ -29,9 +29,8 @@ export default {
     }
   },
   methods: {
-    login(form) {
-      console.log(form)
-      this.$store.dispatch('login', form)
+    auth(form) {
+      this.$store.dispatch('auth', form);
     }
   }
 }

@@ -7,24 +7,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: "",
-    status: ""
+    body: {
+      token: ""
+    },
+    resultCode: ""
   },
   mutations: {
   },
   actions: {
     auth({ state }, form) {
-      state.status = ""
       axios.post('auth', {
         "login": form.login,
         "motDePasse": form.motDePasse
       }).then(response => {
-        state.token = response.data.token;
-        state.status = "200";
+        state.resultCode = response.data.statusCode;
+        state.body.token = response.data.body.token;
         route.push('/home');
       }).catch(
           error => {
-            state.status = "401";
             if (error) throw error
           }
       )
