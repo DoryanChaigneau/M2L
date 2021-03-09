@@ -8,16 +8,8 @@
       <v-text-field label="Mot de passe*" :rules="rules" hide-details="auto" />
     </v-card-text>
     <v-card-actions class="actions">
-      <v-btn color="primary">
+      <v-btn id="coButtom" color="primary">
         se connecter
-      </v-btn>
-      <v-btn
-        class="ma-1"
-        color="secondary"
-        plain
-        @click="$router.push('/signUp')"
-      >
-        S'inscrire
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -47,7 +39,9 @@ export default {
 
 <style scoped>
 
-
+#coButtom{
+  margin-bottom: 1em;
+}
 .card {
   margin-left: auto;
   margin-right: auto;
