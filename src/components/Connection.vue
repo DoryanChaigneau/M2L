@@ -29,6 +29,7 @@ export default {
     name: "Connection",
   data() {
     return {
+      rules: [value => !!value || "Champ requis."],
       form: {
         login: "",
         motDePasse: ""
