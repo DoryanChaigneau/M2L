@@ -39,7 +39,6 @@ export default {
       },
       leagueName(){
         this.libelle = localStorage.getItem("libelle");
-        console.log(this.libelle)
       },
       async tabResa() {
         var id = localStorage.getItem("id_league");

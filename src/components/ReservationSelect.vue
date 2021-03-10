@@ -8,7 +8,7 @@
         <p class="card-text"><b>Description :</b> {{ item.description }}</p>
         <p class="card-text"><b>Surface : </b>{{ item.dimension }} m²</p>
         <p class="card-text"><b>La salle peux acceuillir : </b>{{ item.nbPlaces }} personnes</p>
-        <btn-resa></btn-resa>
+        <btn-resa :id="item.id"></btn-resa>
       </div>
     </div>
   </div>
@@ -25,7 +25,9 @@ export default {
   name: "ReservationSelect",
   beforeMount() {
     this.$store.dispatch('getSalles')
+
   },
+
 
 }
 </script>

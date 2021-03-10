@@ -29,8 +29,6 @@
             </v-row>
           </v-app>
 
-
-
         </v-card-text>
 
         <v-divider></v-divider>
@@ -44,13 +42,9 @@
           >
             Annuler
           </v-btn>
-          <v-btn
-              color="red"
-              text
-              @click="dialog = false"
-          >
-            Valider
-          </v-btn>
+          <router-link  class="nav-link" to="/home">
+          <v-btn color="red" text @click="postResa(picker, id)">Valider</v-btn>
+          </router-link>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -60,24 +54,27 @@
 <script>
 
 export default {
-
   name: "BtnResa",
+  props: [
+    'id'
+  ],
+
   data() {
     return {
       dialog: false,
       picker: new Date().toISOString().substr(0, 10),
-      date: new Date().toISOString().substr(0, 10),
-      menu: false,
-      modal: false,
-      menu2: false,
-    }
-  },
-  methods: {
-    getDate() {
-      console.log(this.picker)
 
     }
-  }
+  },
+  beforeMount() {
+    this.$store.dispatch('getSalles')
+  },
+  methods: {
+    postResa(date, id) {
+      this.$store.dispatch('makeResa', {id: id, date: date})
+
+    }
+  },
 }
 </script>
 
