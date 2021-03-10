@@ -9,16 +9,15 @@
     </v-card-text>
     <v-card-actions class="actions">
       <v-btn id="coButtom" color="primary" @click.prevent="auth(form)">
-        se connecter
+        SE CONNECTER
       </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
-
 export default {
-    name: "Connection",
+  name: "Connection",
   data() {
     return {
       rules: [value => !!value || "Champ requis."],
@@ -38,17 +37,19 @@ export default {
 
 <style scoped>
 
-#coButtom{
+#coButtom {
   margin-bottom: 1em;
 }
+
 .card {
   margin-left: auto;
   margin-right: auto;
-  width:50%;
+  width: 50%;
   margin-top: 50px;
   /* height: 50vh; */
   align-self: stretch;
 }
+
 .actions {
   margin-top: 40px;
   justify-content: center;
