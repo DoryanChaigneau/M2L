@@ -14,7 +14,8 @@ export default new Vuex.Store({
       libelle:"",
       test:"",
       error:"",
-      resas:""
+      resas:"",
+        salles: ""
     }
   },
   mutations: {
@@ -57,6 +58,15 @@ export default new Vuex.Store({
             if (error) throw error
           }
       )
+    },
+    getSalles({state}) {
+      axios.get('halls').then(response => {
+        state.salles = response.data.body
+      }).catch(
+          error => {
+            if (error) throw error
+          }
+      );
     }
   },
   modules: {
