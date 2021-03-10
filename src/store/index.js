@@ -14,9 +14,9 @@ export default new Vuex.Store({
       libelle:"",
       test:"",
       error:"",
-        salles: ""
-    }
 
+    },
+    salles: ""
 
   },
   mutations: {

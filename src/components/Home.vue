@@ -13,7 +13,7 @@
           </ul>
 				</div>
 				<div class="card-footer text-muted">
-					<router-link  class="nav-link" to="/rp">
+					<router-link  class="nav-link" to="/rs">
 						<button type="button" class="btn btn-outline-info">Créer une réservation</button>
 					</router-link>
 				</div>
