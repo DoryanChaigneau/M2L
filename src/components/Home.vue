@@ -7,13 +7,13 @@
 				<div class="card-body">
 					<h5 class="card-title">Liste de vos réservations</h5>
           <ul id="resas">
-            <li v-for="resa in resas" :key="resa.id">
-              {{ resa.libelle_salle }} le {{ resa.date }} de {{ resa.heureDebut }} jusqu'à {{ resa.heureFin }}
+            <li v-for="resa in $store.state.resas" :key="resa.id">
+              {{ resa.libelle_salle }} le {{ resa.date_format }} de {{ resa.heureDebut }} jusqu'à {{ resa.heureFin }}
             </li>
           </ul>
 				</div>
 				<div class="card-footer text-muted">
-					<router-link  class="nav-link" to="/rp">
+					<router-link  class="nav-link" to="/rs">
 						<button type="button" class="btn btn-outline-info">Créer une réservation</button>
 					</router-link>
 				</div>
@@ -27,25 +27,29 @@ export default {
     data() {
       return {
         resas: [],
-        libelle: "",
+        libelle:"",
       }
     },
     methods: {
-      league() {
+
+      async league() {
         var id = localStorage.getItem("id_league");
-        this.$store.dispatch('league',id);
+        await this.$store.dispatch('league', id);
+        this.leagueName();
       },
       leagueName(){
         this.libelle = localStorage.getItem("libelle");
-        console.log(this.libelle)
-      }
+      },
+      async tabResa() {
+        var id = localStorage.getItem("id_league");
+        await this.$store.dispatch('resaLeague', id);
+      },
     },
     beforeMount() {
-      this.league()
+      this.league();
+      this.tabResa();
     },
-    mounted:function(){
-      setTimeout(()=>{ this.leagueName() }, 300);
-    }
+
 }
 
 </script>

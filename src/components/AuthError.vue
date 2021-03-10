@@ -30,7 +30,9 @@
   </div>
 </template>
 <script>
+
 export default {
+
   name: "AuthError",
   props: {
     isTrue: Boolean
