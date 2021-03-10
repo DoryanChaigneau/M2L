@@ -1,7 +1,7 @@
 <template>
 		<div class="col-md-8 offset-md-2" style="margin-top:50px;">
 			<div class="card text-center">
-				<div class="card-header">
+				<div class="card-header text-center">
           Bienvenue <input type="text" v-model="libelle" disabled>
 				</div>
 				<div class="card-body">
@@ -34,14 +34,17 @@ export default {
       league() {
         var id = localStorage.getItem("id_league");
         this.$store.dispatch('league',id);
+      },
+      leagueName(){
+        this.libelle = localStorage.getItem("libelle");
+        console.log(this.libelle)
       }
     },
     beforeMount() {
       this.league()
     },
     mounted:function(){
-      this.libelle = localStorage.getItem("libelle");
-      console.log(this.libelle)
+      setTimeout(()=>{ this.leagueName() }, 300);
     }
 }
 
