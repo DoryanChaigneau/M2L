@@ -2,7 +2,7 @@
 		<div class="col-md-8 offset-md-2" style="margin-top:50px;">
 			<div class="card text-center">
 				<div class="card-header">
-          Bienvenue <input type="text" v-model="nameLigue" disabled>
+          Bienvenue <input type="text" v-model="libelle" disabled>
 				</div>
 				<div class="card-body">
 					<h5 class="card-title">Liste de vos réservations</h5>
@@ -27,8 +27,22 @@ export default {
     data() {
       return {
         resas: [],
-        nameLigue: ""
+        libelle: "",
       }
     },
-  }
+    methods: {
+      league() {
+        var id = localStorage.getItem("id_league");
+        this.$store.dispatch('league',id);
+      }
+    },
+    beforeMount() {
+      this.league()
+    },
+    mounted:function(){
+      this.libelle = localStorage.getItem("libelle");
+      console.log(this.libelle)
+    }
+}
+
 </script>

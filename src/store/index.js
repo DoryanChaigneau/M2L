@@ -9,8 +9,11 @@ export default new Vuex.Store({
   state: {
     body: {
       token: "",
+      id:"",
       id_league:"",
-      libelle_league:"",
+      libelle:"",
+      test:"",
+      error:""
     }
   },
   mutations: {
@@ -23,7 +26,7 @@ export default new Vuex.Store({
       }).then(response => {
         state.body.token = response.data.body.token;
         localStorage["token"] = response.data.body.token;
-        localStorage["id_league"] = response.data.body.id_league;
+        localStorage["id_league"] = response.data.body.id;
         route.push('/home');
       }).catch(
           error => {
@@ -31,11 +34,13 @@ export default new Vuex.Store({
           }
       )
     },
-    league(id_league){
+    league({state},id){
       axios.post('league',{
-        "id_league": id_league
+        "id": id
       }).then(response => {
-        localStorage["libelle_league"] = response.data.body.libelle_league
+        state.body.libelle = response.data.body.libelle;
+        localStorage["libelle"] = response.data.body.libelle;
+
       }).catch(
           error => {
             if (error) throw error

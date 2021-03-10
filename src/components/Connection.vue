@@ -32,7 +32,7 @@ export default {
   methods: {
     auth(form) {
       this.$store.dispatch('auth', form);
-    }
+    },
   }
 }
 </script>
