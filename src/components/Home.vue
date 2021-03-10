@@ -7,8 +7,8 @@
 				<div class="card-body">
 					<h5 class="card-title">Liste de vos réservations</h5>
           <ul id="resas">
-            <li v-for="resa in resas" :key="resa.id">
-              {{ resa.libelle_salle }} le {{ resa.date }} de {{ resa.heureDebut }} jusqu'à {{ resa.heureFin }}
+            <li v-for="resa in $store.state.resas" :key="resa.id">
+              {{ resa.libelle_salle }} le {{ resa.date_format }} de {{ resa.heureDebut }} jusqu'à {{ resa.heureFin }}
             </li>
           </ul>
 				</div>
@@ -40,10 +40,15 @@ export default {
       leagueName(){
         this.libelle = localStorage.getItem("libelle");
         console.log(this.libelle)
-      }
+      },
+      async tabResa() {
+        var id = localStorage.getItem("id_league");
+        await this.$store.dispatch('resaLeague', id);
+      },
     },
     beforeMount() {
-      this.league()
+      this.league();
+      this.tabResa();
     },
 
 }

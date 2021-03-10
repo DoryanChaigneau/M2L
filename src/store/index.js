@@ -14,10 +14,9 @@ export default new Vuex.Store({
       libelle:"",
       test:"",
       error:"",
-
+      resas:"",
     },
     salles: ""
-
   },
   mutations: {
   },
@@ -43,6 +42,17 @@ export default new Vuex.Store({
       }).then(response => {
         state.body.libelle = response.data.body.libelle;
         localStorage["libelle"] = response.data.body.libelle;
+      }).catch(
+          error => {
+            if (error) throw error
+          }
+      )
+    },
+    async resaLeague({state},ligueId){
+      await axios.post('league/resa',{
+        "ligueId": ligueId
+      }).then(response => {
+        state.resas = response.data.body;
       }).catch(
           error => {
             if (error) throw error
