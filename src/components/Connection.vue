@@ -5,7 +5,8 @@
     </v-card-title>
     <v-card-text>
       <v-text-field label="Identifiant *" :rules="rules" hide-details="auto" v-model="form.login"/>
-      <v-text-field label="Mot de passe *" :rules="rules" hide-details="auto" v-model="form.motDePasse"/>
+      <v-text-field label="Mot de passe *" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :rules="rules" :type="show1 ? 'text' : 'password'" hide-details="auto" v-model="form.motDePasse"
+                    @click:append="show1 = ! show1"/>
     </v-card-text>
     <v-card-actions class="actions">
       <v-btn id="coButtom" color="primary" @click.prevent="auth(form)">
@@ -20,6 +21,7 @@ export default {
   name: "Connection",
   data() {
     return {
+      show1: false,
       rules: [value => !!value || "Champ requis."],
       form: {
         login: "",
