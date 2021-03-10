@@ -20,6 +20,7 @@
     <AuthError :is-true="isBoolean" @change="isBoolean = $event"></AuthError>
 
   </div>
+
 </template>
 
 <script>
