@@ -34,13 +34,12 @@ export default new Vuex.Store({
           }
       )
     },
-    league({state},id){
-      axios.post('league',{
+    async league({state},id){
+      await axios.post('league',{
         "id": id
       }).then(response => {
         state.body.libelle = response.data.body.libelle;
         localStorage["libelle"] = response.data.body.libelle;
-
       }).catch(
           error => {
             if (error) throw error

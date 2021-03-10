@@ -27,13 +27,15 @@ export default {
     data() {
       return {
         resas: [],
-        libelle: "",
+        libelle:"",
       }
     },
     methods: {
-      league() {
+
+      async league() {
         var id = localStorage.getItem("id_league");
-        this.$store.dispatch('league',id);
+        await this.$store.dispatch('league', id);
+        this.leagueName();
       },
       leagueName(){
         this.libelle = localStorage.getItem("libelle");
@@ -43,9 +45,7 @@ export default {
     beforeMount() {
       this.league()
     },
-    mounted:function(){
-      setTimeout(()=>{ this.leagueName() }, 300);
-    }
+
 }
 
 </script>
