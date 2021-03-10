@@ -8,7 +8,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     body: {
-      token: ""
+      token: "",
+      id_league:"",
+      libelle_league:"",
     }
   },
   mutations: {
@@ -21,6 +23,7 @@ export default new Vuex.Store({
       }).then(response => {
         state.body.token = response.data.body.token;
         localStorage["token"] = response.data.body.token;
+        localStorage["id_league"] = response.data.body.id_league;
         route.push('/home');
       }).catch(
           error => {
@@ -28,6 +31,17 @@ export default new Vuex.Store({
           }
       )
     },
+    league(id_league){
+      axios.post('league',{
+        "id_league": id_league
+      }).then(response => {
+        localStorage["libelle_league"] = response.data.body.libelle_league
+      }).catch(
+          error => {
+            if (error) throw error
+          }
+      )
+    }
   },
   modules: {
   }
