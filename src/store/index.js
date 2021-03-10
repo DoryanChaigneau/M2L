@@ -13,7 +13,8 @@ export default new Vuex.Store({
       id_league:"",
       libelle:"",
       test:"",
-      error:""
+      error:"",
+      resas:""
     }
   },
   mutations: {
@@ -40,6 +41,17 @@ export default new Vuex.Store({
       }).then(response => {
         state.body.libelle = response.data.body.libelle;
         localStorage["libelle"] = response.data.body.libelle;
+      }).catch(
+          error => {
+            if (error) throw error
+          }
+      )
+    },
+    async resaLeague({state},ligueId){
+      await axios.post('league/resa',{
+        "ligueId": ligueId
+      }).then(response => {
+        state.resas = response.data.body;
       }).catch(
           error => {
             if (error) throw error
