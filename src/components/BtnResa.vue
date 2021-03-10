@@ -1,6 +1,5 @@
 <template>
 
-
   <div class="text-center" data-app>
     <v-dialog
         v-model="dialog"
@@ -28,7 +27,6 @@
               <v-date-picker v-model="picker"></v-date-picker>
             </v-row>
           </v-app>
-
         </v-card-text>
 
         <v-divider></v-divider>
