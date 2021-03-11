@@ -5,12 +5,39 @@
           Bienvenue <input type="text" v-model="libelle" disabled>
 				</div>
 				<div class="card-body">
-					<h5 class="card-title">Liste de vos réservations</h5>
-          <ul id="resas">
-            <li v-for="resa in $store.state.resas" :key="resa.id">
-              {{ resa.libelle_salle }} le {{ resa.date_format }} de {{ resa.heureDebut }} jusqu'à {{ resa.heureFin }}
-            </li>
-          </ul>
+          <v-app id="inspire">
+            <v-simple-table>
+              <template v-slot:default>
+                <thead>
+                <tr>
+                  <th class="text-center">
+                    Salle
+                  </th>
+                  <th class="text-center">
+                    Date
+                  </th>
+                  <th class="text-center">
+                    Heure de Début
+                  </th>
+                  <th class="text-center">
+                    Heure de Fin
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                    v-for="resa in $store.state.resas" :key="resa.id"
+                >
+                  <td>{{ resa.libelle_salle }}</td>
+                  <td>{{ resa.date_format }}</td>
+                  <td>{{ resa.heureDebut }}</td>
+                  <td>{{ resa.heureFin }}</td>
+                </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </v-app>
+
 				</div>
 				<div class="card-footer text-muted">
 					<router-link  class="nav-link" to="/rs">
@@ -18,6 +45,12 @@
 					</router-link>
 				</div>
 			</div>
+
+
+
+
+
+
 		</div>
 </template>
 
