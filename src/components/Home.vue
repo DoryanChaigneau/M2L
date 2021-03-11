@@ -40,15 +40,18 @@ export default {
       leagueName(){
         this.libelle = localStorage.getItem("libelle");
       },
-      async tabResa() {
+      tabResa() {
         var id = localStorage.getItem("id_league");
-        await this.$store.dispatch('resaLeague', id);
+        this.$store.dispatch('resaLeague', id);
       },
     },
     beforeMount() {
       this.league();
-      this.tabResa();
+
     },
+  mounted() {
+    this.tabResa();
+  }
 
 }
 
