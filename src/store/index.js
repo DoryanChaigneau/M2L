@@ -13,9 +13,9 @@ export default new Vuex.Store({
             id_league: "",
             libelle: "",
             test: "",
-            error: "",
-            resas: "",
+            error: ""
         },
+        resas: "",
         salles: "",
         salleId: ""
     },
@@ -48,10 +48,11 @@ export default new Vuex.Store({
                 }
             )
         },
-        resaLeague({state}, ligueId) {
-            axios.post('league/resa', {
+        async resaLeague({state}, ligueId) {
+            await axios.post('league/resa', {
                 "ligueId": ligueId
             }).then(response => {
+                console.log(response.data)
                 state.resas = response.data.body;
             }).catch(
                 error => {

@@ -46,11 +46,6 @@
 				</div>
 			</div>
 
-
-
-
-
-
 		</div>
 </template>
 
@@ -73,18 +68,18 @@ export default {
       leagueName(){
         this.libelle = localStorage.getItem("libelle");
       },
-      tabResa() {
+      async tabResa() {
         var id = localStorage.getItem("id_league");
-        this.$store.dispatch('resaLeague', id);
+        await this.$store.dispatch('resaLeague', id);
       },
     },
     beforeMount() {
       this.league();
-
-    },
-  mounted() {
-    this.tabResa();
-  }
+      this.tabResa();
+     },
+  // mounted() {
+  //   this.tabResa();
+  // }
 
 }
 
