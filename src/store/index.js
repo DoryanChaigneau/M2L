@@ -48,8 +48,8 @@ export default new Vuex.Store({
                 }
             )
         },
-        async resaLeague({state}, ligueId) {
-            await axios.post('league/resa', {
+        resaLeague({state}, ligueId) {
+            axios.post('league/resa', {
                 "ligueId": ligueId
             }).then(response => {
                 state.resas = response.data.body;
