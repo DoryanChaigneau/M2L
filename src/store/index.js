@@ -69,8 +69,7 @@ export default new Vuex.Store({
                 "date": date
             }).then(response => {
                 state.resas = response.data.body;
-
-
+                route.push('/home');
             }).catch(
                 error => {
                     if (error) throw error

@@ -42,9 +42,7 @@
           >
             Annuler
           </v-btn>
-          <router-link  class="nav-link" to="/home">
           <v-btn color="red" text @click="postResa(picker, id)">Valider</v-btn>
-          </router-link>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -79,8 +77,12 @@ export default {
 </script>
 
 <style scoped>
+
 .cssDatePicker {
   min-height: 1vh !important;
 }
 
+.theme--dark.v-btn.v-btn--has-bg {
+  background-color: #108DEA  !important;
+}
 </style>

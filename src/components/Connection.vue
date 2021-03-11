@@ -69,4 +69,8 @@ export default {
   justify-content: center;
   flex-direction: column;
 }
+
+.theme--light.v-btn.v-btn--has-bg {
+  background-color: #108DEA  !important;
+}
 </style>
